@@ -34,6 +34,8 @@ public class MasterManager : MonoBehaviour
         }
 
         Destroy(talkWindow);
+
+        //aaaaaaaaaa
     }
 
 }
