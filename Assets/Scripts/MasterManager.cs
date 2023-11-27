@@ -33,9 +33,8 @@ public class MasterManager : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
+        //テキストをすべて表示しきったらDestroy
         Destroy(talkWindow);
-
-        //aaaaaaaaaa
     }
 
 }
