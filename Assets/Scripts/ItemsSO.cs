@@ -15,16 +15,20 @@ public class ItemsSO : ScriptableObject
         //[SerializeField] int itemNum;
         [TextArea]
         [SerializeField] string itemDescription;
+        [SerializeField] int effect;
 
         public enum itemType
         {
+            recovery,
+            attackTool,
+            defenseTool,
             coin,
-            weapon,
-            tool,
 
         }
 
+
+        public itemType ItemType { get => type; }
         public string ItemName { get => itemName; }
-        //public int ItemNum { get => itemNum; }
+        public int ItemEffect { get => effect; }
     }
 }

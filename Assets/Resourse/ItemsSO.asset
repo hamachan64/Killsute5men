@@ -13,11 +13,23 @@ MonoBehaviour:
   m_Name: ItemsSO
   m_EditorClassIdentifier: 
   itemList:
+  - type: 0
+    itemName: Portion
+    itemDescription: "\u56DE\u5FA9\u85AC"
+    effect: 50
   - type: 2
-    itemName: heal
-    itemNum: 0
-    itemDescription: 
-  - type: 2
-    itemName: aaa
-    itemNum: 1
-    itemDescription: 
+    itemName: "\u30A2\u30EC\u30B9\u85AC"
+    itemDescription: "\u653B\u6483\u30A2\u30C3\u30D7"
+    effect: 1
+  - type: 3
+    itemName: "\u30D8\u30E9\u85AC"
+    itemDescription: "\u5B88\u5099\u30A2\u30C3\u30D7"
+    effect: 2
+  - type: 1
+    itemName: "\u5F62\u898B\u306E\u92AD"
+    itemDescription: "\u5FA9\u6D3B\u85AC"
+    effect: 3
+  - type: 1
+    itemName: "\u5F62\u898B\u306E\u92AD"
+    itemDescription: "\u5FA9\u6D3B\u85AC"
+    effect: 3

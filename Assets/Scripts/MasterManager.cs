@@ -17,7 +17,7 @@ public class MasterManager : MonoBehaviour
     void Start()
     {
         talkWindow.SetActive(true);
-        Debug.Log(eventSO.eventsList.Count);
+        //Debug.Log(eventSO.eventsList.Count);
 
         StartCoroutine("EventProgress");
 
