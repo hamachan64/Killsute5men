@@ -7,9 +7,13 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _hpText;
+    [SerializeField] TextMeshProUGUI _mpText;
+    [SerializeField] Slider _hpSlider;
+    [SerializeField] Slider _mpSlider;
     [SerializeField] PlayerStatusSO playerStatusSO;
     [SerializeField] EnemyStatusSO enemyStatusSO;
-    public int currentHP;
+    public int currentHP;   //åªç›HP
+    public int currentMP;   //åªç›MP
     private int damage;
 
     [SerializeField] ItemWindowManager itemWindowManager;
@@ -18,13 +22,22 @@ public class PlayerController : MonoBehaviour
     {
         //èâä˙HPÇÃÉZÉbÉg
         currentHP = playerStatusSO.HP;
-        _hpText.GetComponent<TextMeshProUGUI>().text = "HP : " + currentHP;
+        currentMP = playerStatusSO.MP;
+        _hpText.GetComponent<TextMeshProUGUI>().text = currentHP.ToString();
+        _mpText.GetComponent<TextMeshProUGUI>().text = currentMP.ToString();
+        _hpSlider.maxValue = playerStatusSO.HP;
+        _hpSlider.value = currentHP;
+        _mpSlider.maxValue = playerStatusSO.MP;
+        _mpSlider.value = currentMP;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        _hpText.GetComponent<TextMeshProUGUI>().text = "HP : " + currentHP;
+        //_hpText.GetComponent<TextMeshProUGUI>().text = currentHP.ToString();
+        //_hpSlider.value = currentHP;
+        _mpText.GetComponent<TextMeshProUGUI>().text = currentMP.ToString();
+        //_mpSlider.value = currentMP;
+
     }
 
     //ObjectÇÃTriggerè’ìÀîªíË
@@ -39,6 +52,7 @@ public class PlayerController : MonoBehaviour
             if (damage > 0)
             {
                 currentHP -= damage;
+                SetHPBar();
             }
         }
 
@@ -63,5 +77,11 @@ public class PlayerController : MonoBehaviour
 
             Destroy(col.gameObject);
         }
+    }
+
+    public void SetHPBar()
+    {
+        _hpText.GetComponent<TextMeshProUGUI>().text = currentHP.ToString();
+        _hpSlider.value = currentHP;
     }
 }

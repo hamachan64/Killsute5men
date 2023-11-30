@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] EnemyStatusSO enemyStatusSO;
     [SerializeField] PlayerStatusSO playerStatusSO;
+    [SerializeField] Slider enemyHPSlider;
+    [SerializeField] GameObject dropItem;
 
-    private int currentHP;
+    private int enemyCurrentHP;
     private int damage;
 
     private NavMeshAgent agent;
@@ -22,7 +25,9 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         //èâä˙HPÇÃÉZÉbÉg
-        currentHP = enemyStatusSO.enemyStatusList[0].HP;
+        enemyCurrentHP = enemyStatusSO.enemyStatusList[0].HP;
+        enemyHPSlider.maxValue = enemyStatusSO.enemyStatusList[0].HP;
+        enemyHPSlider.value = enemyCurrentHP;
 
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -49,13 +54,6 @@ public class EnemyManager : MonoBehaviour
             animator.SetBool("Attack", false);
         }
 
-        if (currentHP <= 0)
-        {
-            animator.SetBool("Death", true);
-
-            Destroy(this.gameObject, 5.0f);
-        }
-
     }
 
     private void OnTriggerEnter(Collider col)
@@ -68,9 +66,21 @@ public class EnemyManager : MonoBehaviour
 
             if (damage > 0)
             {
-                currentHP -= damage;
+                enemyCurrentHP -= damage;
+                enemyHPSlider.value = enemyCurrentHP;
             }
-            Debug.Log(currentHP);
+
+            if (enemyCurrentHP <= 0)
+            {
+                animator.SetBool("Death", true);
+
+                dropItem.transform.position = this.transform.position;
+                //dropItem.transform.position.z = this.transform.position.z + 1;
+                dropItem.SetActive(true);
+                Destroy(this.gameObject, 5.0f);
+            }
+
+            Debug.Log(enemyCurrentHP);
         }
     }
 }

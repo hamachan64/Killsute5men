@@ -16,7 +16,7 @@ MonoBehaviour:
   - enemyName: Minotaur
     description: 
     type: 0
-    _hp: 4000
+    _hp: 30
     _mp: 50
     _attack: 10
     _defence: 5

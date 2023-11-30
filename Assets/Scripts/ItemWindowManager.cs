@@ -35,9 +35,10 @@ public class ItemWindowManager : MonoBehaviour
         Debug.Log(getItem);
         //獲得アイテムの所字数をプラス
         itemQtyArray[getItem] = itemQtyArray[getItem] + 1;
+        ItemOpen();
     }
 
-    //ItemWindowが開かれた際の操作
+    //ItemWindowが開かれた際にItemの個数をそろえる
     public void ItemOpen()
     {
         portionText.GetComponent<TextMeshPro>().text = itemQtyArray[0].ToString();
@@ -69,6 +70,8 @@ public class ItemWindowManager : MonoBehaviour
                         player.GetComponent<PlayerController>().currentHP += itemsSO.itemList[itemNo].ItemEffect;
                     }
                     ItemOpen();
+                    player.GetComponent<PlayerController>().SetHPBar();
+                    GameObject.Find("StatusWindow").GetComponent<StatusWindowManager>().StatusOpen();
                     break;
                 case "attackTool":
                     break;

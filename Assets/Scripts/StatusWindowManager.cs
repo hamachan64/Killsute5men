@@ -18,8 +18,6 @@ public class StatusWindowManager : MonoBehaviour
     private int currentAttack;
     private int currentDefense;
 
-    //PlayerController playerController = new PlayerController();
-
     void Start()
     {
         
@@ -35,11 +33,8 @@ public class StatusWindowManager : MonoBehaviour
         _defenseValue.GetComponent<TextMeshProUGUI>().text = currentDefense.ToString();
     }
 
-    // Update is called once per frame
     public void StatusOpen()
     {
-        //PlayerController playerController = new PlayerController();
-        //_hpValue.GetComponent<TextMeshProUGUI>().text = playerController.currentHP.ToString();
 
         //プレーヤーのHPを取ってきて，ステータス画面に表示
         _hpValue.GetComponent<TextMeshProUGUI>().text = GameObject.Find("Main Camera").GetComponent<PlayerController>().currentHP.ToString();
