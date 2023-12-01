@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventsList:
   - personName: Master
-    eventDescription: YaHaaaaaa!!!!
+    eventDescription: "\u3042\u306A\u305F\u306F\u904B\u547D"
   - personName: Master
-    eventDescription: Hello............
+    eventDescription: YaHaaaaaa!!!!
   - personName: Master
     eventDescription: Haaaaaaaa?

@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject window;
-    private bool statusWindowActive = false;
-
     //MRTKのボタンからステータス画面を開くための関数
     public void StatusWindowOpen()
     {
@@ -22,18 +21,26 @@ public class MenuManager : MonoBehaviour
     //MRTKのボタンでactiveと非activeの状態を入れ替える関数
     public void WindowActiveCheck()
     {
-        switch(statusWindowActive)
+        switch(window.activeSelf)
         {
             case true:
                 window.SetActive(false);
                 Time.timeScale = 1;         //ポーズ状態の解除
-                statusWindowActive = false;
                 break;
             case false:
                 window.SetActive(true);
                 Time.timeScale = 0;         //ポーズ状態
-                statusWindowActive = true;
                 break;
         }
+    }
+
+    void MainToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    void TitleToMain()
+    {
+        SceneManager.LoadScene("Main");
     }
 }

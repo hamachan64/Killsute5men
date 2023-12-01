@@ -74,10 +74,15 @@ public class EnemyManager : MonoBehaviour
             {
                 animator.SetBool("Death", true);
 
+                //アイテムの座標を調節してドロップさせる
                 dropItem.transform.position = this.transform.position;
-                //dropItem.transform.position.z = this.transform.position.z + 1;
-                dropItem.SetActive(true);
+                Vector3 height = dropItem.transform.position;
+                height.y = 0.3f;
+                dropItem.transform.position = height;
+
+                //Enemyを破壊しアイテムを出す
                 Destroy(this.gameObject, 5.0f);
+                dropItem.SetActive(true);
             }
 
             Debug.Log(enemyCurrentHP);
