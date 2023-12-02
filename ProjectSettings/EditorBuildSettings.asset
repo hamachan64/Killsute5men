@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MRTK/Examples/Demos/UX/ProgressIndicator/Scenes/ProgressIndicatorExamplesAdditiveLoad.unity
-    guid: 6656338ce09c49d4cbeb765266d02fb9
+    path: Assets/Scenes/Title.unity
+    guid: 3d84d53072b559544814c4e65c6ee6a9
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 2669db6e8a980e64ca0bf7ed673b9f29
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6d3523ac9aa719040933ad2f4fbf4171, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 87b85548eded544458c62cc407c55de6, type: 2}

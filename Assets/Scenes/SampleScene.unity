@@ -21078,6 +21078,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7845736007922846546, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845736007922846546, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1421294092}
+    - target: {fileID: 7845736007922846546, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainToTitle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845736007922846546, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845736007922846546, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8183885319540774417, guid: 6f0bd20b0f037d6418959b191b715ade, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1

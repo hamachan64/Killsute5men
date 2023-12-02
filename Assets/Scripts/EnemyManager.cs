@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    //[SerializeField] Transform target;
     [SerializeField] EnemyStatusSO enemyStatusSO;
     [SerializeField] PlayerStatusSO playerStatusSO;
     [SerializeField] Slider enemyHPSlider;
@@ -15,6 +15,7 @@ public class EnemyManager : MonoBehaviour
     private int enemyCurrentHP;
     private int damage;
 
+    private Transform target;
     private NavMeshAgent agent;
     private Animator animator;
     private float speed = 2.0f;
@@ -29,6 +30,7 @@ public class EnemyManager : MonoBehaviour
         enemyHPSlider.maxValue = enemyStatusSO.enemyStatusList[0].HP;
         enemyHPSlider.value = enemyCurrentHP;
 
+        target = GameObject.Find("Main Camera").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         agent.speed = speed;
@@ -43,6 +45,16 @@ public class EnemyManager : MonoBehaviour
         distance = Vector3.Distance(target.position, this.transform.position);
 
         agent.destination = target.position;
+        target = GameObject.Find("Main Camera").GetComponent<Transform>();
+        Vector3 betweenPtoE = target.position;
+        betweenPtoE.z += 0.5f;
+
+        agent.destination = betweenPtoE;
+
+
+        //Vector3 betweenPtoE = agent.destination.position;
+        //betweenPtoE.z -= 1f;
+        //agent.destination.position = betweenPtoE;
 
         if (distance >= 0 && distance < 2)
         {
@@ -55,6 +67,16 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
+
+    Transform Des(Transform pos)
+    {
+        Vector3 betweenPtoE = pos.position;
+        betweenPtoE.z -= 1f;
+        pos.position = betweenPtoE;
+
+        return pos.transform;
+    }
+
 
     private void OnTriggerEnter(Collider col)
     {
@@ -79,13 +101,18 @@ public class EnemyManager : MonoBehaviour
                 Vector3 height = dropItem.transform.position;
                 height.y = 0.3f;
                 dropItem.transform.position = height;
+                Invoke("SetActive", 5);
 
-                //Enemy‚ð”j‰ó‚µƒAƒCƒeƒ€‚ðo‚·
+                //Enemy‚ð”j‰ó
                 Destroy(this.gameObject, 5.0f);
-                dropItem.SetActive(true);
             }
 
             Debug.Log(enemyCurrentHP);
         }
+    }
+
+    void SetActive()
+    {
+        dropItem.SetActive(true);
     }
 }

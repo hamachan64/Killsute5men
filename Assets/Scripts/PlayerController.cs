@@ -51,7 +51,14 @@ public class PlayerController : MonoBehaviour
 
             if (damage > 0)
             {
-                currentHP -= damage;
+                if (currentHP > damage)
+                {
+                    currentHP -= damage;
+                }
+                else
+                {
+                    currentHP = 0;
+                }
                 SetHPBar();
             }
         }

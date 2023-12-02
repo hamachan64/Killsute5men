@@ -34,12 +34,12 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    void MainToTitle()
+    public void MainToTitle()
     {
         SceneManager.LoadScene("Title");
     }
 
-    void TitleToMain()
+    public void TitleToMain()
     {
         SceneManager.LoadScene("Main");
     }
