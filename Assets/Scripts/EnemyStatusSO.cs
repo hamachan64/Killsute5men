@@ -18,6 +18,7 @@ public class EnemyStatusSO : ScriptableObject
         [SerializeField] int _mp;
         [SerializeField] int _attack;
         [SerializeField] int _defence;
+        [SerializeField] float _speed;
 
         public enum enemyType
         {
@@ -29,6 +30,7 @@ public class EnemyStatusSO : ScriptableObject
         public int MP { get => _mp;}
         public int Attack { get => _attack;}
         public int Defence { get => _defence;}
+        public float speed { get => _speed;}
 
     }
 }

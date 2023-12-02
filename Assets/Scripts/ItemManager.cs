@@ -6,9 +6,4 @@ public class ItemManager : MonoBehaviour
 {
     public int itemNum;
 
-    //public void ItemUsed(int itemNum)
-    //{
-
-    //}
-
 }

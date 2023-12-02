@@ -16,14 +16,16 @@ MonoBehaviour:
   - enemyName: Minotaur
     description: 
     type: 0
+    _hp: 300
+    _mp: 50
+    _attack: 20
+    _defence: 5
+    _speed: 2
+  - enemyName: Zombie
+    description: 
+    type: 0
     _hp: 30
     _mp: 50
     _attack: 10
     _defence: 5
-  - enemyName: Boss
-    description: 
-    type: 0
-    _hp: 100
-    _mp: 50
-    _attack: 10
-    _defence: 5
+    _speed: 1

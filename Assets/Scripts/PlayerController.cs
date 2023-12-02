@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider col)   //private void OnCollisionEnter(Collision collision)なら衝突判定
     {
         //Enemyの攻撃
-        if (col.gameObject.CompareTag("EnemyWeapon"))
+        if (col.gameObject.CompareTag("EnemyWeapon") || col.gameObject.CompareTag("Enemy"))
         {
             //ダメージ調整
             damage = (int)(enemyStatusSO.enemyStatusList[0].Attack / 2 - playerStatusSO.Defence / 4);
@@ -68,22 +68,31 @@ public class PlayerController : MonoBehaviour
         {
             itemWindowManager.GetComponent<ItemWindowManager>().getItem = col.gameObject.GetComponent<ItemManager>().itemNum;   //
             itemWindowManager.GetComponent<ItemWindowManager>().ItemGet();
-
-            //switch (col.gameObject.GetComponent<ItemManager>().itemNum)
-            //{
-            //    case 0:
-            //        portion += 1;
-            //        portionText.GetComponent<TextMeshPro>().text = portion.ToString();
-            //        break;
-            //    case 1:
-            //        coin += 1;
-            //        coinText.GetComponent<TextMeshPro>().text = coin.ToString();
-            //        break;
-
-            //}
-
             Destroy(col.gameObject);
         }
+    }
+    IEnumerator OnCollisionStay(Collider col)
+    {
+        //Enemyの攻撃
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            //ダメージ調整
+            damage = (int)(enemyStatusSO.enemyStatusList[1].Attack / 2 - playerStatusSO.Defence / 4);
+
+            if (damage > 0)
+            {
+                if (currentHP > damage)
+                {
+                    currentHP -= damage;
+                }
+                else
+                {
+                    currentHP = 0;
+                }
+                SetHPBar();
+            }
+        }
+        yield return new WaitForSeconds(3);
     }
 
     public void SetHPBar()

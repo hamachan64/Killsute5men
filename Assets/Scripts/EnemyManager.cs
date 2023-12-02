@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
 {
-    //[SerializeField] Transform target;
+    [SerializeField] int enemyNum;
     [SerializeField] EnemyStatusSO enemyStatusSO;
     [SerializeField] PlayerStatusSO playerStatusSO;
     [SerializeField] Slider enemyHPSlider;
@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     private Animator animator;
-    private float speed = 2.0f;
+    private float speed;
     private float distance;
 
 
@@ -26,14 +26,14 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         //èâä˙HPÇÃÉZÉbÉg
-        enemyCurrentHP = enemyStatusSO.enemyStatusList[0].HP;
-        enemyHPSlider.maxValue = enemyStatusSO.enemyStatusList[0].HP;
+        enemyCurrentHP = enemyStatusSO.enemyStatusList[enemyNum].HP;
+        enemyHPSlider.maxValue = enemyStatusSO.enemyStatusList[enemyNum].HP;
         enemyHPSlider.value = enemyCurrentHP;
 
         target = GameObject.Find("Main Camera").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        agent.speed = speed;
+        agent.speed = enemyStatusSO.enemyStatusList[enemyNum].speed;
         animator.SetBool("Attack", false);
         animator.SetBool("Death", false);
 
