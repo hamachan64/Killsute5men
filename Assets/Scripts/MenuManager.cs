@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void MainToTitle()
+    public void BackToTitle()
     {
         SceneManager.LoadScene("Title");
     }

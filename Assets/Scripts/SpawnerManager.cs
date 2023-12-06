@@ -26,7 +26,7 @@ public class SpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(1);
 
         GameObject minotaur1 = Instantiate(minotaurPrefab);
         GameObject minotaur2 = Instantiate(minotaurPrefab);
@@ -39,4 +39,5 @@ public class SpawnerManager : MonoBehaviour
         boss.transform.position = new Vector3(0, 0, 20);
 
     }
+
 }

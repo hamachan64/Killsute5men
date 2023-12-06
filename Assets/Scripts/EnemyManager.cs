@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class EnemyManager : MonoBehaviour
         agent.destination = target.position;
         target = GameObject.Find("Main Camera").GetComponent<Transform>();
         Vector3 betweenPtoE = target.position;
-        betweenPtoE.z += 0.5f;
+        betweenPtoE.z += 0.3f;
 
         agent.destination = betweenPtoE;
 
@@ -101,10 +102,22 @@ public class EnemyManager : MonoBehaviour
                 Vector3 height = dropItem.transform.position;
                 height.y = 0.3f;
                 dropItem.transform.position = height;
-                Invoke("SetActive", 5);
 
-                //Enemy‚ð”j‰ó
-                Destroy(this.gameObject, 5.0f);
+                if (this.gameObject.CompareTag("Enemy"))
+                {
+                    Invoke("SetActive", 2);
+
+                    //Enemy‚ð”j‰ó
+                    Destroy(this.gameObject, 2.0f);
+                }
+                else if (this.gameObject.CompareTag("EnemyBoss"))
+                {
+                    Invoke("SetActive", 5);
+
+                    //Enemy‚ð”j‰ó
+                    Destroy(this.gameObject, 5.0f);
+                    SceneManager.LoadScene("Clear");
+                }
             }
 
             Debug.Log(enemyCurrentHP);

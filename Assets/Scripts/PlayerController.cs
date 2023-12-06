@@ -43,24 +43,10 @@ public class PlayerController : MonoBehaviour
     //ObjectのTrigger衝突判定
     private void OnTriggerEnter(Collider col)   //private void OnCollisionEnter(Collision collision)なら衝突判定
     {
-        //Enemyの攻撃
-        if (col.gameObject.CompareTag("EnemyWeapon") || col.gameObject.CompareTag("Enemy"))
+        //Enemyの攻撃 下の判定が微妙ならcol.gameObject.CompareTag("Enemy")でゾンビもこっちの方が良いかも
+        if (col.gameObject.CompareTag("EnemyWeapon"))
         {
-            //ダメージ調整
-            damage = (int)(enemyStatusSO.enemyStatusList[0].Attack / 2 - playerStatusSO.Defence / 4);
-
-            if (damage > 0)
-            {
-                if (currentHP > damage)
-                {
-                    currentHP -= damage;
-                }
-                else
-                {
-                    currentHP = 0;
-                }
-                SetHPBar();
-            }
+            EnemyAttack(0);
         }
 
         //アイテムの獲得
@@ -71,33 +57,49 @@ public class PlayerController : MonoBehaviour
             Destroy(col.gameObject);
         }
     }
-    IEnumerator OnCollisionStay(Collider col)
+
+    private void OnCollisionEnter(Collision col)
     {
         //Enemyの攻撃
         if (col.gameObject.CompareTag("Enemy"))
         {
-            //ダメージ調整
-            damage = (int)(enemyStatusSO.enemyStatusList[1].Attack / 2 - playerStatusSO.Defence / 4);
-
-            if (damage > 0)
-            {
-                if (currentHP > damage)
-                {
-                    currentHP -= damage;
-                }
-                else
-                {
-                    currentHP = 0;
-                }
-                SetHPBar();
-            }
+            Debug.Log("aaaaaaaaaaaaa");
+            EnemyAttack(1);
+            //StartCoroutine("EnemyAttack");
+            //InvokeRepeating("EnemyAttack", 0, 2);
         }
-        yield return new WaitForSeconds(3);
+
     }
+
+    void EnemyAttack(int i)
+    {
+        //ダメージ調整
+        damage = (int)(enemyStatusSO.enemyStatusList[i].Attack / 2 - playerStatusSO.Defence / 4);
+
+        if (damage > 0)
+        {
+            if (currentHP > damage)
+            {
+                currentHP -= damage;
+            }
+            else
+            {
+                currentHP = 0;
+            }
+            SetHPBar();
+        }
+    }
+
 
     public void SetHPBar()
     {
         _hpText.GetComponent<TextMeshProUGUI>().text = currentHP.ToString();
         _hpSlider.value = currentHP;
+    }
+
+    public void SetMPBar()
+    {
+        _mpText.GetComponent<TextMeshProUGUI>().text = currentMP.ToString();
+        _mpSlider.value = currentMP;
     }
 }
