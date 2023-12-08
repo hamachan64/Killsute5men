@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//各EnemyでAddComponent
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] int enemyNum;
@@ -23,7 +24,6 @@ public class EnemyManager : MonoBehaviour
     private float distance;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         //初期HPのセット
@@ -40,7 +40,6 @@ public class EnemyManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         distance = Vector3.Distance(target.position, this.transform.position);
@@ -105,14 +104,15 @@ public class EnemyManager : MonoBehaviour
 
                 if (this.gameObject.CompareTag("Enemy"))
                 {
-                    Invoke("SetActive", 2);
+                    Invoke("ItemSetActive", 2);
 
                     //Enemyを破壊
                     Destroy(this.gameObject, 2.0f);
+                    SceneManager.LoadScene("Clear");
                 }
                 else if (this.gameObject.CompareTag("EnemyBoss"))
                 {
-                    Invoke("SetActive", 5);
+                    Invoke("ItemSetActive", 5);
 
                     //Enemyを破壊
                     Destroy(this.gameObject, 5.0f);
@@ -120,11 +120,11 @@ public class EnemyManager : MonoBehaviour
                 }
             }
 
-            Debug.Log(enemyCurrentHP);
+            //Debug.Log(enemyCurrentHP);
         }
     }
 
-    void SetActive()
+    void ItemSetActive()
     {
         dropItem.SetActive(true);
     }

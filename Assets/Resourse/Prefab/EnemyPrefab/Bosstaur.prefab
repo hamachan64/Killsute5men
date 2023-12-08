@@ -176,7 +176,7 @@ MonoBehaviour:
     position: {x: 0.009000003, y: 0.87450004, z: -8}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   endPoint:
-    position: {x: 0, y: 1.2590641, z: -6.575495}
+    position: {x: 0, y: 1.1201254, z: -6.575495}
     rotation: {x: -0.003924759, y: 0.13997434, z: -0.032129817, w: 0.9896259}
 --- !u!114 &2162944871634662719
 MonoBehaviour:
@@ -326,8 +326,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0.018000007, y: 0.3290398, z: 20}
-  - {x: 0, y: 1.0981679, z: 21.424505}
+  - {x: 0.036000013, y: 1.1580796, z: 20}
+  - {x: 0, y: 2.1405811, z: 22.84901}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.01
@@ -4960,7 +4960,7 @@ Transform:
   m_GameObject: {fileID: 2275261304335996816}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2275261304079497795}
@@ -5031,6 +5031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e96b6dc82a722c429880510afd4a345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyNum: 2
   enemyStatusSO: {fileID: 11400000, guid: 321229865e9f113449f5c6a30075633a, type: 2}
   playerStatusSO: {fileID: 11400000, guid: 28d61e28f1c60ab43a86fefccbe91e1c, type: 2}
   enemyHPSlider: {fileID: 2275261304268527883}
@@ -5309,7 +5310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2275261304397406690}
   m_Layer: 0
-  m_Name: Creature
+  m_Name: Bosstaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5711,7 +5712,7 @@ Transform:
   m_GameObject: {fileID: 2276060321691310837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.001}
-  m_LocalScale: {x: 0.3181926, y: 0.094814196, z: 1}
+  m_LocalScale: {x: 0.6371085, y: 0.18744001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2277966618838579845}
@@ -6125,7 +6126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 21340371490990018, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
+  - {fileID: 7122181263101547456, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6177,8 +6178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Minotaur
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
-  m_sharedMaterial: {fileID: 21340371490990018, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
+  m_sharedMaterial: {fileID: 7122181263101547456, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

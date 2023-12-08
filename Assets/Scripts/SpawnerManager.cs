@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//EnemyGenerator‚ÅAddComponent
 public class SpawnerManager : MonoBehaviour
 {
     //“GƒvƒŒƒnƒu
@@ -18,6 +19,8 @@ public class SpawnerManager : MonoBehaviour
 
     IEnumerator EnemyGenerator()
     {
+        //yield return new WaitForSeconds(10);
+
         //5•b‚²‚Æ‚É“G‚ğ¶¬
         for (int i = 0; i < 5; i++)
         {
@@ -26,7 +29,7 @@ public class SpawnerManager : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(10);
 
         GameObject minotaur1 = Instantiate(minotaurPrefab);
         GameObject minotaur2 = Instantiate(minotaurPrefab);

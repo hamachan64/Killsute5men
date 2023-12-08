@@ -4,6 +4,7 @@ using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
+//NearMenu‚ÅAddComponent
 public class ItemWindowManager : MonoBehaviour
 {
     [SerializeField] ItemsSO itemsSO;
@@ -52,7 +53,6 @@ public class ItemWindowManager : MonoBehaviour
     public void ItemUsed(int itemNo)
     {
         itemType = itemsSO.itemList[itemNo].ItemType.ToString();
-        //mainplayer = player;
 
         if (itemQtyArray[itemNo] > 0)
         {

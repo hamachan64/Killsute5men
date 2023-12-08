@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//SavePanel‚ÅAddComponent(‰¼)
 public class SaveManager : MonoBehaviour
 {
     [SerializeField] GameObject player;

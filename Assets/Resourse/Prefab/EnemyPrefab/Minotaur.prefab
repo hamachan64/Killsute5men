@@ -5513,7 +5513,7 @@ MonoBehaviour:
     position: {x: 0.009000003, y: 0.87450004, z: -8}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   endPoint:
-    position: {x: 0, y: 1.2590641, z: -6.575495}
+    position: {x: 0, y: 1.4012854, z: -6.575495}
     rotation: {x: -0.003924759, y: 0.13997434, z: -0.032129817, w: 0.9896259}
 --- !u!114 &6755212628074496077
 MonoBehaviour:
@@ -5664,7 +5664,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0.018000007, y: 0.3290398, z: 20}
-  - {x: 0, y: 1.0981679, z: 21.424505}
+  - {x: 0, y: 1.3826106, z: 21.424505}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.01
@@ -5840,7 +5840,7 @@ Transform:
   m_GameObject: {fileID: 6642022419656732551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.001}
-  m_LocalScale: {x: 0.3181926, y: 0.094814196, z: 1}
+  m_LocalScale: {x: 0.35605425, y: 0.101220004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6640542723500036087}
@@ -6254,7 +6254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 21340371490990018, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
+  - {fileID: 7122181263101547456, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6306,8 +6306,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Minotaur
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
-  m_sharedMaterial: {fileID: 21340371490990018, guid: afc8299d5d5bbd440a0616c8ecbc7217, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
+  m_sharedMaterial: {fileID: 7122181263101547456, guid: 25e41b69b97ea0f4cbd9bddd56410355, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

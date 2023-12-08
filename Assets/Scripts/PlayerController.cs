@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//MainCameraÇ≈AddComponent
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _hpText;
@@ -63,7 +65,6 @@ public class PlayerController : MonoBehaviour
         //EnemyÇÃçUåÇ
         if (col.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("aaaaaaaaaaaaa");
             EnemyAttack(1);
             //StartCoroutine("EnemyAttack");
             //InvokeRepeating("EnemyAttack", 0, 2);
@@ -85,9 +86,11 @@ public class PlayerController : MonoBehaviour
             else
             {
                 currentHP = 0;
+                SceneManager.LoadScene("GameOver");
             }
             SetHPBar();
         }
+
     }
 
 

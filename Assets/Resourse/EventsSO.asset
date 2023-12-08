@@ -13,9 +13,23 @@ MonoBehaviour:
   m_Name: EventsSO
   m_EditorClassIdentifier: 
   eventsList:
-  - personName: Master
-    eventDescription: "\u3042\u306A\u305F\u306F\u904B\u547D"
-  - personName: Master
-    eventDescription: YaHaaaaaa!!!!
-  - personName: Master
-    eventDescription: Haaaaaaaa?
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u3069\u3046\u3084\u3089\u65B0\u3057\u3044\u6751\u304C\u8FD1\u3044\u3088\u3046\u3060\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u3093\u3001\u6751\u306E\u69D8\u5B50\u304C\u4F55\u304B\u304A\u304B\u3057\u3044\u3002"
+  - personName: ???
+    eventDescription: "\u4E94\u53F3\u30A7\u9580\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u8AB0\u3060\u2026!?"
+  - personName: ???
+    eventDescription: "\u3042\u306A\u305F\u306B\u306F\u3042\u306E\u6751\u3092\u6551\u3046\u4F7F\u547D\u304C\u3042\u308A\u307E\u3059\u3002"
+  - personName: ???
+    eventDescription: "\u5176\u306E\u5200\u3092\u624B\u306B\u53D6\u308A\u3042\u306A\u305F\u306E\u6545\u90F7\u3092\u6551\u3044\u306A\u3055\u3044\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u6545\u90F7\u3060\u3068!?\u3000\u3069\u3046\u3044\u3046\u3053\u3068\u3060\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u3057\u304B\u3057\u3001\u4ECA\u8A73\u3057\u3044\u8A71\u3092\u805E\u3044\u3066\u3044\u308B\u6687\u306F\u7121\u3044\u3088\u3046\u3060\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u3084\u308B\u3057\u304B\u306A\u3044...\u3002"
+  - personName: "\u77F3\u5DDD\u4E94\u30A7\u9580"
+    eventDescription: "\u307E\u305F\u3064\u307E\u3089\u3093\u3082\u306E\u3092\u65AC\u3063\u305F\u304B\u30FB\u30FB\u30FB"
