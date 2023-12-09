@@ -108,7 +108,6 @@ public class EnemyManager : MonoBehaviour
 
                     //Enemy‚ð”j‰ó
                     Destroy(this.gameObject, 2.0f);
-                    SceneManager.LoadScene("Clear");
                 }
                 else if (this.gameObject.CompareTag("EnemyBoss"))
                 {

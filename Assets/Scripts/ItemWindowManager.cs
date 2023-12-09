@@ -8,7 +8,7 @@ using UnityEngine;
 public class ItemWindowManager : MonoBehaviour
 {
     [SerializeField] ItemsSO itemsSO;
-    [SerializeField] TextMeshProUGUI itemText;
+    //[SerializeField] TextMeshProUGUI itemText;
 
     //ItemWindowのアイテム個数のテキスト
     [SerializeField] TextMeshPro portionText;
@@ -78,12 +78,16 @@ public class ItemWindowManager : MonoBehaviour
                 case "defenseTool":
                     break;
                 case "coin":
+                    player.GetComponent<PlayerController>().currentHP = 200;
+                    ItemOpen();
+                    player.GetComponent<PlayerController>().SetHPBar();
+                    GameObject.Find("StatusWindow").GetComponent<StatusWindowManager>().StatusOpen();
                     break;
             }
         }
         else
         {
-            Debug.Log(itemQtyArray[itemNo]);
+            //Debug.Log(itemQtyArray[itemNo]);
         }
 
     }
