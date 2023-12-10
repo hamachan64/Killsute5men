@@ -18,6 +18,8 @@ public class MasterManager : MonoBehaviour
 
     [SerializeField] bool progressFlag;
 
+    //private AudioSource audio = null;Event後BGM
+
     //ゲームスタート時に表示するテキスト
     void Start()
     {
@@ -27,8 +29,11 @@ public class MasterManager : MonoBehaviour
         spawner.SetActive(false);
         status.SetActive(false);
 
+        //audio = GetComponent<AudioSource>();Event後BGM
+        //audio.enabled = false;
+
         //Sceneで出すテキストを分ける
-        if(progressFlag)
+        if (progressFlag)
         {
             StartCoroutine("EventProgress");
         }
@@ -58,6 +63,9 @@ public class MasterManager : MonoBehaviour
         sword.SetActive(true);
         spawner.SetActive(true);
         status.SetActive(true);
+
+        //audio.enabled = true; Event後BGM
+        //audio.Play();
     }
 
     //Clearで動くイベント
